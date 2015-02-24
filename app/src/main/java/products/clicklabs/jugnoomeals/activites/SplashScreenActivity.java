@@ -17,13 +17,18 @@ public class SplashScreenActivity extends Activity {
         setContentView(R.layout.activity_splash_screen);
 
     }
-    public void onClick(View view){
-        switch (view.getId()){
+
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.login_button_splash:
-                Intent intent = new Intent(this,LoginActivity.class);
-                startActivity(intent);
+                Intent intentLogin = new Intent(this, LoginActivity.class);
+                startActivity(intentLogin);
+                finish();
                 break;
             case R.id.signup_button_splash:
+                Intent intentSignUp = new Intent(this, SignUpActivity.class);
+                startActivity(intentSignUp);
+                finish();
                 break;
         }
 

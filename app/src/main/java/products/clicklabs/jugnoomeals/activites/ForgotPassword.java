@@ -18,12 +18,22 @@ public class ForgotPassword extends Activity {
 
 
     }
-    public void onClick(View view){
-        switch (view.getId()){
+
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.back_button_forgot_password_activity:
-                Intent intent = new Intent(this,LoginActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout_single_meal_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFFFF">
+
+    <ImageView
+        android:id="@+id/meal_image_main_menu"
+        android:layout_width="385dp "
+        android:layout_height="290dp"
+        android:layout_marginTop="30dp"
+        android:background="#bbabcabc" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/meal_image_main_menu"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rupee_icon" />
+
+        <TextView
+            android:id="@+id/meal_price_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="60"
+            android:textColor="#FF000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/meal_day_name_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal_price_main_menu"
+            android:layout_marginTop="5dp"
+            android:text="Friday Lunch Thali"
+            android:textColor="#FF000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/meal_name_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal_day_name_main_menu"
+            android:layout_marginTop="5dp"
+            android:text="Mix veg Rajma "
+            android:textColor="#FF000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/meal_time_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal_name_main_menu"
+            android:layout_marginTop="5dp"
+            android:text="12:00- 3:00"
+            android:textColor="#bb000000"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/minus_button_main_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@+id/meal_name_main_menu"
+            android:background="@drawable/minus_sign_press_item" />
+
+        <TextView
+            android:id="@+id/meal_quantity_text_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="39dp"
+            android:layout_toRightOf="@+id/minus_button_main_menu"
+            android:text="3"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/add_button_main_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/meal_quantity_text_main_menu"
+            android:background="@drawable/add_sign_press_item" />
+    </RelativeLayout>
+
+</RelativeLayout>

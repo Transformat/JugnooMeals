@@ -5,6 +5,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="forgot_password_text">Please provide your registered email id. We will send you instructions to reset your password.</string>
     <string name="title_activity_login">LoginActivity</string>
-
+    <string name="terms_and_conditions_signup">By signing up,you agree to</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
+    <string name="otp_message">Please enter your One Time Password sent over SMS to</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+
+    <string name="title_activity_otp_verification">OtpVerificationActivity</string>
 </resources>
