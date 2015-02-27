@@ -14,6 +14,7 @@
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -21,22 +22,25 @@
             android:name=".activites.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_login"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".activites.ForgotPassword"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_forgot_password"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".activites.SignUpActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_sign_up"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".activites.OtpVerificationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_otp_verification"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".activites.MainMealMenuActivity"
+            android:label="@string/title_activity_main_meal_menu"></activity>
     </application>
 
 </manifest>

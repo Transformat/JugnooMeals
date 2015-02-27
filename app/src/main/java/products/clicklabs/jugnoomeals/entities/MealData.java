@@ -2,12 +2,12 @@ package products.clicklabs.jugnoomeals.entities;
 
 
 public class MealData {
-    String imageSource;
-    String mealName;
-    String mealPrice;
-    String mealTime;
-    String mealDetail;
-    String mealDescription;
+    public String imageSource;
+    public String mealName;
+    public String mealPrice;
+    public String mealTime;
+    public String mealDetail;
+    public String mealDescription;
 
     public MealData(String mealName,
                     String imageSource,

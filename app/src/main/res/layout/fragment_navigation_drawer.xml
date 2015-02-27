@@ -1,0 +1,241 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <ImageView
+        android:id="@+id/profile_picture_navigation_drawer"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/profie_picture_shape_navigation_drawer" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:background="@drawable/profile_picture_ring_shape" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/profile_picture_navigation_drawer"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.7"
+            android:singleLine="true"
+            android:text="Name"
+            android:textColor="#AB000000"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_drawer_button_color"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:layout_weight="0.19"
+                android:background="@drawable/navigation_drawer_promotion_icon_change" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1.6"
+                android:text="Promotions"
+                android:textColor="@drawable/navigation_drawer_text_color"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:background="@drawable/navigation_drawer_arrow_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#3a000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_drawer_button_color"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:layout_weight="0.19"
+                android:background="@drawable/navigation_drawer_cash_icon_change" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1.6"
+                android:text="Cash"
+                android:textColor="@drawable/navigation_drawer_text_color"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:background="@drawable/navigation_drawer_arrow_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="0.01"
+            android:background="#3a000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_drawer_button_color"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:layout_weight="0.19"
+                android:background="@drawable/navigation_drawer_order_icon_change" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1.6"
+                android:text="Order Details"
+                android:textColor="@drawable/navigation_drawer_text_color"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:background="@drawable/navigation_drawer_arrow_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="0.01"
+            android:background="#3a000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_drawer_button_color"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:layout_weight="0.19"
+                android:background="@drawable/navigation_drawer_support_icon_change" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1.6"
+                android:text="Support"
+                android:textColor="@drawable/navigation_drawer_text_color"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:background="@drawable/navigation_drawer_arrow_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="0.01"
+            android:background="#3a000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_drawer_button_color"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:layout_weight="0.19"
+                android:background="@drawable/navigation_drawer_about_icon_change" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1.6"
+                android:text="About"
+                android:textColor="@drawable/navigation_drawer_text_color"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:background="@drawable/navigation_drawer_arrow_color" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

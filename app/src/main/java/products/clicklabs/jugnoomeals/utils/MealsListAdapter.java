@@ -8,22 +8,31 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import products.clicklabs.jugnoomeals.R;
+import products.clicklabs.jugnoomeals.entities.MealData;
 
 
 public class MealsListAdapter extends BaseAdapter {
     Context context;
     ImageView mealImage;
     TextView mealName, mealPrice, mealDayName, mealTime, mealQuantity;
+    List<MealData> mealDataList;
+
+    public MealsListAdapter(Context context, List<MealData> mealDataList) {
+        this.context = context;
+        this.mealDataList = mealDataList;
+    }
 
     @Override
     public int getCount() {
-        return 0;
+        return mealDataList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return mealDataList.get(position);
     }
 
     @Override
@@ -41,6 +50,10 @@ public class MealsListAdapter extends BaseAdapter {
         mealPrice = (TextView) view.findViewById(R.id.meal_price_main_menu);
         mealQuantity = (TextView) view.findViewById(R.id.meal_quantity_text_main_menu);
         mealTime = (TextView) view.findViewById(R.id.meal_time_main_menu);
+        mealName.setText(mealDataList.get(position).mealName);
+        mealDayName.setText(mealDataList.get(position).mealDetail);
+        mealPrice.setText(mealDataList.get(position).mealPrice);
+        mealQuantity.setText("3");
         return view;
     }
 

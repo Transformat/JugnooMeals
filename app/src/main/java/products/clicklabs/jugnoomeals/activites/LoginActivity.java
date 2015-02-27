@@ -29,6 +29,9 @@ public class LoginActivity extends Activity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.login_button_login_activity:
+                Intent mainMenuIntent = new Intent(this, MainMealMenuActivity.class);
+                startActivity(mainMenuIntent);
         }
     }
 
