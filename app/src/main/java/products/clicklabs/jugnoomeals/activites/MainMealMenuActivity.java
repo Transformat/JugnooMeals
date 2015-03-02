@@ -1,22 +1,27 @@
 package products.clicklabs.jugnoomeals.activites;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import products.clicklabs.jugnoomeals.R;
 import products.clicklabs.jugnoomeals.entities.MealData;
-import products.clicklabs.jugnoomeals.utils.MealsListAdapter;
+
 
 public class MainMealMenuActivity extends FragmentActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -24,6 +29,7 @@ public class MainMealMenuActivity extends FragmentActivity
     MealsListAdapter mealAdapter;
     ListView mealList;
     List<MealData> mealDataList;
+    DrawerLayout navigationDrawer;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -43,9 +49,21 @@ public class MainMealMenuActivity extends FragmentActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         mealDataList = new ArrayList<MealData>();
         mealDataList.add(new MealData("Rajmah Chawal", "abc", "60", "12:00-3:00", "Hello", "Basmati"));
+        mealDataList.add(new MealData("Curry Chawal", "abc", "60", "12:00-3:00", "Hi", "Basmati"));
         mealList = (ListView) findViewById(R.id.list_view_main_menu);
         mealAdapter = new MealsListAdapter(MainMealMenuActivity.this, mealDataList);
         mealList.setAdapter(mealAdapter);
+        navigationDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.open_drawer_image_button:
+                navigationDrawer.openDrawer(Gravity.START);
+                break;
+        }
+
     }
 
 
@@ -113,6 +131,51 @@ public class MainMealMenuActivity extends FragmentActivity
             ((MainMealMenuActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+    }
+
+    class MealsListAdapter extends BaseAdapter {
+        Context context;
+        ImageView mealImage;
+        TextView mealName, mealPrice, mealDayName, mealTime, mealQuantity;
+        List<MealData> mealDataList;
+
+        public MealsListAdapter(Context context, List<MealData> mealDataList) {
+            this.context = context;
+            this.mealDataList = mealDataList;
+        }
+
+        @Override
+        public int getCount() {
+            return mealDataList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return mealDataList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = inflater.inflate(R.layout.main_menu_list_adapter, null);
+            mealImage = (ImageView) view.findViewById(R.id.meal_image_main_menu);
+            mealName = (TextView) view.findViewById(R.id.meal_name_main_menu);
+            mealDayName = (TextView) view.findViewById(R.id.meal_day_name_main_menu);
+            mealPrice = (TextView) view.findViewById(R.id.meal_price_main_menu);
+            mealQuantity = (TextView) view.findViewById(R.id.meal_quantity_text_main_menu);
+            mealTime = (TextView) view.findViewById(R.id.meal_time_main_menu);
+            mealName.setText(mealDataList.get(position).mealName);
+            mealDayName.setText(mealDataList.get(position).mealDetail);
+            mealPrice.setText(mealDataList.get(position).mealPrice);
+            mealQuantity.setText("3");
+            return view;
+        }
+
     }
 
 }

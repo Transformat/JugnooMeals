@@ -40,7 +40,12 @@
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".activites.MainMealMenuActivity"
-            android:label="@string/title_activity_main_meal_menu"></activity>
+            android:label="@string/title_activity_main_meal_menu" />
+        <activity
+            android:name=".activites.SupportActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_support"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
     </application>
 
 </manifest>

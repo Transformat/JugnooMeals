@@ -28,12 +28,14 @@
                 android:textSize="22sp" />
 
             <ImageButton
+                android:id="@+id/open_drawer_image_button"
                 android:layout_width="24dp"
                 android:layout_height="17dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/menu_icon" />
+                android:background="@drawable/menu_icon"
+                android:onClick="onClick" />
 
         </RelativeLayout>
 

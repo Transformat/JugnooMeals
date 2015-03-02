@@ -50,7 +50,7 @@
             android:layout_below="@id/otp_message"
             android:layout_marginTop="30dp"
             android:background="#00FFFFFF"
-            android:hint="Email"
+            android:hint="One Time Password"
             android:inputType="textEmailAddress"
             android:singleLine="true"
             android:textSize="20sp" />

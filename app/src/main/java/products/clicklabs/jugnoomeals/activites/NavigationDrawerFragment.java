@@ -1,6 +1,7 @@
 package products.clicklabs.jugnoomeals.activites;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import products.clicklabs.jugnoomeals.R;
 
@@ -18,6 +20,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
+    LinearLayout supportButtonLayout;
     private NavigationDrawerCallbacks mCallbacks;
     private DrawerLayout mDrawerLayout;
     private ViewGroup mDrawerListView;
@@ -37,11 +40,11 @@ public class NavigationDrawerFragment extends Fragment {
         // drawer. See PREF_USER_LEARNED_DRAWER for details.
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
-
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
+
 
         // Select either the default item (0) or the last selected item.
         //selectItem(mCurrentSelectedPosition);
@@ -59,7 +62,16 @@ public class NavigationDrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         mDrawerListView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_navigation_drawer, container, false);
+        supportButtonLayout = (LinearLayout) mDrawerListView.findViewById(R.id.support_button_navigation_drawer);
+        supportButtonLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent supportActivityIntent = new Intent(getActivity(), SupportActivity.class);
+                startActivity(supportActivityIntent);
+            }
+        });
         return mDrawerListView;
+
     }
 
 
