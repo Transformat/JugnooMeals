@@ -7,25 +7,18 @@ import android.view.View;
 
 import products.clicklabs.jugnoomeals.R;
 
-
-public class SupportActivity extends Activity {
+public class AboutUsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_support);
-
-
+        setContentView(R.layout.activity_about_us);
     }
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.back_button_support_activity:
-                Intent mainMenuIntent = new Intent(this, MainMealMenuActivity.class);
-                startActivity(mainMenuIntent);
-                finish();
-                break;
-        }
+        Intent mainMenuIntent = new Intent(this, MainMealMenuActivity.class);
+        startActivity(mainMenuIntent);
+        finish();
     }
 
     @Override

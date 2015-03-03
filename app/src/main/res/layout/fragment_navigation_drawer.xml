@@ -37,6 +37,7 @@
             android:textSize="17sp" />
 
         <LinearLayout
+            android:id="@+id/promotion_button_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -77,6 +78,7 @@
             android:background="#3a000000" />
 
         <LinearLayout
+            android:id="@+id/cash_button_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -118,15 +120,14 @@
             android:background="#3a000000" />
 
         <LinearLayout
+            android:id="@+id/order_details_button_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/navigation_drawer_button_color"
             android:clickable="true"
             android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
+            android:weightSum="2">
 
             <ImageView
                 android:layout_width="0dp"
@@ -203,6 +204,7 @@
             android:background="#3a000000" />
 
         <LinearLayout
+            android:id="@+id/about_button_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

@@ -20,10 +20,10 @@ public class NavigationDrawerFragment extends Fragment {
 
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
-    LinearLayout supportButtonLayout;
+    LinearLayout supportButtonLayout, promotionButtonLayout, aboutButtonLayout, cashButtonLayout, orderDetailsLayout;
     private NavigationDrawerCallbacks mCallbacks;
     private DrawerLayout mDrawerLayout;
-    private ViewGroup mDrawerListView;
+    private ViewGroup mDrawerView;
     private View mFragmentContainerView;
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
@@ -35,48 +35,68 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Read in the flag indicating whether or not the user has demonstrated awareness of the
-        // drawer. See PREF_USER_LEARNED_DRAWER for details.
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
-
-
-        // Select either the default item (0) or the last selected item.
-        //selectItem(mCurrentSelectedPosition);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        // Indicate that this fragment would like to influence the set of actions in the action bar.
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(false);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mDrawerListView = (ViewGroup) inflater.inflate(
+        mDrawerView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_navigation_drawer, container, false);
-        supportButtonLayout = (LinearLayout) mDrawerListView.findViewById(R.id.support_button_navigation_drawer);
+        promotionButtonLayout = (LinearLayout) mDrawerView.findViewById(R.id.promotion_button_navigation_drawer);
+        aboutButtonLayout = (LinearLayout) mDrawerView.findViewById(R.id.about_button_navigation_drawer);
+        cashButtonLayout = (LinearLayout) mDrawerView.findViewById(R.id.cash_button_navigation_drawer);
+        orderDetailsLayout = (LinearLayout) mDrawerView.findViewById(R.id.order_details_button_navigation_drawer);
+        supportButtonLayout = (LinearLayout) mDrawerView.findViewById(R.id.support_button_navigation_drawer);
+
         supportButtonLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent supportActivityIntent = new Intent(getActivity(), SupportActivity.class);
                 startActivity(supportActivityIntent);
+                getActivity().finish();
             }
         });
-        return mDrawerListView;
+        promotionButtonLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+            }
+        });
+        aboutButtonLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent aboutUsIntent = new Intent(getActivity(), AboutUsActivity.class);
+                startActivity(aboutUsIntent);
+                getActivity().finish();
+            }
+        });
+        cashButtonLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        orderDetailsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
-    public boolean isDrawerOpen() {
-        return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
+        return mDrawerView;
     }
 
     /**
@@ -128,9 +148,6 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     public static interface NavigationDrawerCallbacks {
-        /**
-         * Called when an item in the navigation drawer is selected.
-         */
         void onNavigationDrawerItemSelected(int position);
     }
 }

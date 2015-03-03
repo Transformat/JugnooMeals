@@ -45,6 +45,11 @@
             android:name=".activites.SupportActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_support"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".activites.AboutUsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_about_us"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
     </application>
 
