@@ -28,4 +28,6 @@
     <string name="title_activity_support">SupportActivity</string>
 
     <string name="title_activity_about_us">AboutUsActivity</string>
+
+    <string name="title_activity_share_and_promotion">ShareAndPromotionActivity</string>
 </resources>

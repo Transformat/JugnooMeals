@@ -71,7 +71,9 @@ public class NavigationDrawerFragment extends Fragment {
         promotionButtonLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent shareIntent = new Intent(getActivity(), ShareAndPromotionActivity.class);
+                startActivity(shareIntent);
+                getActivity().finish();
             }
         });
         aboutButtonLayout.setOnClickListener(new View.OnClickListener() {
