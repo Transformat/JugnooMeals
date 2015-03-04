@@ -93,7 +93,9 @@ public class NavigationDrawerFragment extends Fragment {
         orderDetailsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent orderHistoryIntent = new Intent(getActivity(), OrderHistoryActivity.class);
+                startActivity(orderHistoryIntent);
+                getActivity().finish();
             }
         });
 
