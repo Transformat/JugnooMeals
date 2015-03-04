@@ -2,6 +2,7 @@ package products.clicklabs.jugnoomeals.activites;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -30,9 +32,7 @@ public class MainMealMenuActivity extends FragmentActivity
     ListView mealList;
     List<MealData> mealDataList;
     DrawerLayout navigationDrawer;
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
+
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     @Override
@@ -47,14 +47,21 @@ public class MainMealMenuActivity extends FragmentActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-        mealDataList = new ArrayList<MealData>();
+        mealDataList = new ArrayList<>();
         mealDataList.add(new MealData("Rajmah Chawal", "abc", "60", "12:00-3:00", "Hello", "Basmati"));
         mealDataList.add(new MealData("Curry Chawal", "abc", "60", "12:00-3:00", "Hi", "Basmati"));
         mealList = (ListView) findViewById(R.id.list_view_main_menu);
         mealAdapter = new MealsListAdapter(MainMealMenuActivity.this, mealDataList);
+        mealList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent mealDetailIntent = new Intent(getApplicationContext(), MealDetailActivity.class);
+                startActivity(mealDetailIntent);
+                finish();
+            }
+        });
         mealList.setAdapter(mealAdapter);
         navigationDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
     }
 
     public void onClick(View view) {
@@ -133,7 +140,7 @@ public class MainMealMenuActivity extends FragmentActivity
         }
     }
 
-    class MealsListAdapter extends BaseAdapter {
+    static class MealsListAdapter extends BaseAdapter {
         Context context;
         ImageView mealImage;
         TextView mealName, mealPrice, mealDayName, mealTime, mealQuantity;
@@ -142,6 +149,16 @@ public class MainMealMenuActivity extends FragmentActivity
         public MealsListAdapter(Context context, List<MealData> mealDataList) {
             this.context = context;
             this.mealDataList = mealDataList;
+        }
+
+        @Override
+        public boolean isEnabled(int position) {
+            return true;
+        }
+
+        @Override
+        public boolean areAllItemsEnabled() {
+            return true;
         }
 
         @Override
@@ -156,7 +173,7 @@ public class MainMealMenuActivity extends FragmentActivity
 
         @Override
         public long getItemId(int position) {
-            return position;
+            return 0;
         }
 
         @Override

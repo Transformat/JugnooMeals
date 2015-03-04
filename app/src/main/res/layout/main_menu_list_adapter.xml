@@ -10,13 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="290dp"
         android:layout_marginTop="30dp"
-        android:background="#bbabcabc" />
+        android:background="#bbabcabc"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <RelativeLayout
         android:id="@+id/meal_detail_layout_relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/meal_image_main_menu"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
@@ -24,16 +29,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:text="₹"
                     android:textColor="#000000"
                     android:textSize="25sp" />
@@ -43,6 +54,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:text="60"
                     android:textColor="#FF000000"
                     android:textSize="25sp" />
@@ -52,6 +65,8 @@
                 android:id="@+id/meal_day_name_main_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:text="Friday Lunch Thali"
                 android:textColor="#FF000000"
                 android:textSize="15sp" />
@@ -60,6 +75,8 @@
                 android:id="@+id/meal_name_main_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:text="Mix veg Rajma "
                 android:textColor="#FF000000"
                 android:textSize="15sp" />
@@ -68,6 +85,8 @@
                 android:id="@+id/meal_time_main_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:text="12:00- 3:00"
                 android:textColor="#bb000000"
                 android:textSize="15sp" />
@@ -79,19 +98,24 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:descendantFocusability="blocksDescendants"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/minus_button_main_menu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/minus_sign_press_item" />
+                android:background="@drawable/minus_sign_press_item"
+                android:focusable="false"
+                android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/meal_quantity_text_main_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:text="3"
                 android:textSize="30sp" />
 
@@ -100,7 +124,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/add_sign_press_item" />
+                android:background="@drawable/add_sign_press_item"
+                android:focusable="false"
+                android:focusableInTouchMode="true" />
 
         </LinearLayout>
     </RelativeLayout>
@@ -110,5 +136,7 @@
         android:layout_height="1dp"
         android:layout_below="@+id/meal_detail_layout_relative"
         android:layout_marginTop="5dp"
-        android:background="#99000000" />
+        android:background="#99000000"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 </RelativeLayout>

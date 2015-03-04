@@ -30,4 +30,6 @@
     <string name="title_activity_about_us">AboutUsActivity</string>
 
     <string name="title_activity_share_and_promotion">ShareAndPromotionActivity</string>
+
+    <string name="title_activity_meal_detail">MealDetailActivity</string>
 </resources>
