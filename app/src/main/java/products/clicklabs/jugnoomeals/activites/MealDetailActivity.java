@@ -35,4 +35,5 @@ public class MealDetailActivity extends Activity {
         startActivity(mainMenuIntent);
         finish();
     }
+
 }

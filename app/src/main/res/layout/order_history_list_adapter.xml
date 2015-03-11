@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="80dp"
     android:background="@drawable/order_list_color_change"
     android:descendantFocusability="blocksDescendants">
 
@@ -73,7 +73,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1.5dp"
         android:layout_alignParentBottom="true"
         android:background="#FFF5BE1B" />
 </RelativeLayout>

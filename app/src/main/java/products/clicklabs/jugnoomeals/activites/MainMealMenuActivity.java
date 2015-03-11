@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,21 @@ public class MainMealMenuActivity extends FragmentActivity
         navigationDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            navigationDrawer.openDrawer(Gravity.START);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.open_drawer_image_button:
                 navigationDrawer.openDrawer(Gravity.START);
                 break;
         }
+
 
     }
 
